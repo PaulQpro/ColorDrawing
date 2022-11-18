@@ -1,6 +1,7 @@
 ﻿using System;
 using static System.Math;
 using Program.Forms;
+using Program.Forms.Elements;
 
 namespace Program.Forms
 {
@@ -42,9 +43,9 @@ namespace Program.Forms
             control.Size = new Size(Width, Height);
             control.Text = Text;
             motherControl.Controls.Add(control);
-        }
+    }
         protected void InitializeStaticControl(Control control, int PosX, int PosY, int Width, int Height)
-        {
+    {
             control.Location = new Point(PosX, PosY);
             control.Size = new Size(Width, Height);
             this.Controls.Add(control);
@@ -57,12 +58,12 @@ namespace Program.Forms
         }
 
 #pragma warning restore CA1822 // Пометьте члены как статические
-    }
+        }
     class Menu : Window
-    {
+            {
         readonly Panel MainPanel = new();
         public Menu()
-        {
+                {
             InitializeForm(400, 340, "Some stupid Program");
             InitializeStaticControl(MainPanel, 0, 0, 400, 300);
             MainPanel.Dock = DockStyle.Fill;
